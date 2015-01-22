@@ -1,0 +1,144 @@
+﻿<UserControl x:Class="WpfApplication4.FeastUI"
+   xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             mc:Ignorable="d" 
+             d:DesignWidth="800" d:DesignHeight="600">
+    <Grid Margin="0,0,0,-90">
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="0*"/>
+            <ColumnDefinition/>
+        </Grid.ColumnDefinitions>
+        <TabControl Name="TC" SelectionChanged="Selector_OnSelectionChanged" Height="660" VerticalAlignment="Top" RenderTransformOrigin="0.5,0.5" Grid.ColumnSpan="2">
+            <TabControl.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform Angle="0.191"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </TabControl.RenderTransform>
+            <TabItem Height="28" Header="Fix Price for Feast" FontSize="15">
+                <Grid Background="#038d98" Height="600" VerticalAlignment="Top" Margin="-5,-5,-3,0">
+
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="100" />
+                        <RowDefinition Height="100" />
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="49.366" />
+                        <RowDefinition Height="0.634"/>
+                    </Grid.RowDefinitions>
+
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="350" />
+                        <ColumnDefinition Width="100" />
+                        <ColumnDefinition Width="100" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+
+                    <Label FontWeight="Bold" Grid.Row="1" Height="28" FontSize="15" HorizontalContentAlignment="Left"
+                           Margin="0,87,95,85" RenderTransformOrigin="0.414,1.857" Grid.ColumnSpan="2" Grid.Column="1" Grid.RowSpan="2">
+                        Enter Amount to fixed the price for per feast
+                    </Label>
+
+                    <TextBox Name="Feastrate" Height="28" Grid.Row="1" Grid.Column="2" HorizontalAlignment="Right"
+                             Width="94" Margin="0,88,0,84" Grid.RowSpan="2" />
+
+                    <Button Name="FeastEntryButton" Grid.Column="3" Height="28"
+
+                            Click="FeastEntryButton_Click" Content="Entry"
+                            Grid.Row="1" Width="75" Margin="15,88,10,84" Grid.RowSpan="2" />
+
+                </Grid>
+            </TabItem>
+            <TabItem Height="28" Header="Feast Entry Form" FontSize="15" Loaded="TabItem_Loaded_1">
+                <Grid Background="#038d98" Loaded="Grid_Loaded_1"  Margin="-5,-5,-3,0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="50" />
+                        <RowDefinition Height="50" />
+                        <RowDefinition Height="50" />
+                        <RowDefinition Height="50" />
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="50" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="200" />
+                        <ColumnDefinition Width="250" />
+                        <ColumnDefinition Width="140" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+
+                    <Label Grid.Row="1" FontSize="15" Grid.Column="1" HorizontalAlignment="Right" FontWeight="Bold" Height="28" Margin="0,12,1,10">Feast Rate</Label>
+
+                    <TextBox Name="FeastrateText" Grid.Row="1" Grid.Column="2" Height="28" MaxWidth="80"
+                             HorizontalAlignment="Left" Margin="63,12,0,10" Width="80" />
+
+                    <DatePicker Name="FeastDatePicker" Grid.Column="3" Grid.Row="1" Height="28"></DatePicker>
+                    <Label Grid.Row="2" FontSize="15" Grid.Column="1" Height="28" FontWeight="Bold"
+                           HorizontalContentAlignment="Center" HorizontalAlignment="Right" Margin="0,12,2,10">
+                        Entry Id
+                    </Label>
+
+                    <TextBox Name="IdTextBox" Grid.Row="2" Grid.Column="2" Height="28" HorizontalAlignment="Left"
+                             MaxWidth="80" Margin="63,10,0,4" Width="80" />
+
+                    <Label Grid.Row="3" FontSize="15" Grid.Column="1" Height="28" FontWeight="Bold"
+                           HorizontalContentAlignment="Center" HorizontalAlignment="Right" Margin="0,14,1,8">
+                        No of Feast
+                    </Label>
+
+                    <TextBox Name="NooffeastTextBox" Grid.Row="3" Grid.Column="2" Height="28"
+                             HorizontalAlignment="Left" MaxWidth="80" Margin="63,10,0,12" Width="80" />
+
+                    <Label Grid.Row="4" FontSize="15"  Grid.Column="1" HorizontalAlignment="Right" Height="28" FontWeight="Bold" Margin="0,10,1,12">Amount</Label>
+
+                    <TextBox Name="AmountTextBox" Grid.Row="4" Grid.Column="2" Height="28" HorizontalAlignment="Left"
+                             Width="80" Margin="63,3,0,10" />
+
+                    <Border Grid.Row="6" Grid.Column="0" Grid.ColumnSpan="3">
+                        <Button Name="SubmitButton" HorizontalAlignment="Right" HorizontalContentAlignment="Center"
+                                Margin="0,-100,120,122" Height="28" MinWidth="65" FontWeight="Bold"
+                                Click="SubmitButton_Click">
+                            Submit
+                        </Button>
+                    </Border>
+
+                </Grid>
+            </TabItem>
+
+            <TabItem Height="28" Header="Feast Distribution" FontSize="15">
+                <Grid Background="#038d98" Margin="-5,-5,-3,0">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="100" />
+                        <RowDefinition Height="*" />
+                        <RowDefinition Height="50" />
+                    </Grid.RowDefinitions>
+
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="150" />
+                        <ColumnDefinition Width="150" />
+                        <ColumnDefinition Width="80" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+
+                    <Label Grid.Row="1" FontSize="15" Grid.Column="1" Height="28" HorizontalAlignment="Right" FontWeight="Bold">Enter Id</Label>
+
+                    <TextBox Name="CheckIdTextBox" Grid.Row="1" Grid.Column="2" Height="28" Width="80" />
+
+                    <Button Name="CheckButton" Grid.Row="1" Grid.Column="3" Height="28"
+                            HorizontalContentAlignment="Center" FontWeight="Bold" Click="CheckButton_Click">
+                        !!Check!!
+                    </Button>
+                </Grid>
+
+            </TabItem>
+        </TabControl>
+    </Grid>
+</UserControl>
